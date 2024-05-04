@@ -1,0 +1,58 @@
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2rem;
+  border: 3px solid rgb(149, 149, 149);
+  border-radius: 1.3rem;
+  width: fit-content;
+  max-width: 600px;
+  font-size: 1.4rem;
+  background-color: rgb(139, 216, 139);
+  transition: all 0.2s;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.41);
+  text-align: justify;
+}
+
+.modal::backdrop {
+  background: rgb(160, 191, 160);
+  opacity: 0.8;
+}
+
+.modal[open] {
+  animation-name: modal;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.modal-close-button{
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  background-color: rgb(106, 14, 14);
+  border: none;
+  padding:0.3rem;
+  padding-right:0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes modal {
+  0% {
+    transform: translateX(-50%) translateY(-50%) scale(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+}
